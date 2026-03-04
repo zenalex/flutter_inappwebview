@@ -392,7 +392,7 @@ class InAppWebViewWebElement implements Disposable {
     required String data,
     String mimeType = "text/html",
   }) async {
-    iframe.src = 'data:$mimeType,' + Uri.encodeComponent(data);
+    iframe.srcdoc = data.toJS;
   }
 
   Future<void> loadFile({required String assetFilePath}) async {
